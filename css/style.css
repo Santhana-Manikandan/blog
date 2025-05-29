@@ -1,0 +1,40 @@
+body {
+  background: linear-gradient(to right, #eee, #fdc435);
+  margin: 0;
+}
+.Name {
+  font-family: "Ephesis", cursive;
+  font-size: 100px;
+  width: 50px;
+  padding-top: 370px;
+  padding-left: 100px;
+  text-shadow: 4px 4px 5px #fdc435;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar a {
+  color: black;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+}
+.navbar a:hover {
+  background-color: #e0a800;
+  color: black;
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}

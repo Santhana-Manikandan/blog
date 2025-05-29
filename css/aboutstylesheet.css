@@ -1,0 +1,142 @@
+body {
+  background: linear-gradient(to right, #fdc435, #eee);
+  margin: 0;
+  min-height: 100vh;
+}
+.navbar ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar a {
+  color: black;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+}
+.navbar a:hover {
+  background-color: #e0e0e0;
+  color: black;
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+.about-section {
+  max-width: 750px;
+  margin: 4rem auto;
+  padding: 2rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 21px;
+  line-height: 1.8;
+}
+
+.about-paragraph {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.Heading {
+  font-family: "DM Sans", sans-serif;
+  font-size: 24px;
+}
+.Avatar {
+  position: absolute;
+  top: 220px;
+  right: 60px;
+  height: 600px;
+}
+.container {
+  display: grid;
+  place-items: center;
+  padding: 40px;
+}
+
+.card__container {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.card__article {
+  position: relative;
+  width: 400px;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.card__data {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 40px);
+  width: 80%;
+  background-color: white;
+  color: black;
+  padding: 16px 20px;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  text-align: center;
+  z-index: 1;
+}
+
+.card__article:hover .card__data {
+  opacity: 1;
+  transform: translate(-50%, -20px);
+}
+
+.card__description {
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.card__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+.Education {
+  font-family: "DM Sans", sans-serif;
+  padding-left: 80px;
+  font-size: 40px;
+}
+.spotify {
+  font-family: "DM Sans", sans-serif;
+  padding-left: 600px;
+}
+.Heading-fav {
+  font-family: "DM Sans", sans-serif;
+  padding-left: 80px;
+  font-size: 40px;
+}
