@@ -32,13 +32,32 @@ body {
 .Icon {
   display: flex;
   justify-content: center;
-  padding-top: 50px;
+  padding-top: 10px;
   gap: 50px;
   font-family: "DM Sans", sans-serif;
 }
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding-top: 80px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid black;
+  transition: border-color 0.3s ease;
+}
+.profile-image:hover{
+  border-color:black;
+}
+
 .chat-bar {
   position: fixed;
-  top: 550px;
+  top: 600px;
   left: 50%;
   transform: translateX(-50%);
   width: 400px;
@@ -77,10 +96,10 @@ h1 {
   font-family: "DM Sans", sans-serif;
   font-size: 50px;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 10px;
 }
 h2 {
   font-family: "DM Sans", sans-serif;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 5px;
 }
