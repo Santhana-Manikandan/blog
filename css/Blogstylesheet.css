@@ -20,8 +20,8 @@ body {
   font-size: 18px;
 }
 .navbar a:hover {
-  background-color: #e0a800;
-  color: black;
+  
+  color: white;
 }
 .navbar {
   position: absolute;
