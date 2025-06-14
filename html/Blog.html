@@ -31,7 +31,7 @@
       <div class="blog-container">
         <!-- Taylor Swift Blog -->
         <div class="blog-card">
-          <img src="Tay.jpg" alt="Taylor Swift" />
+          <img src="Tay.jpg" alt="Taylor" />
           <div class="blog-content">
             <div class="blog-date">May 9, 2025</div>
             <h2>My Love for Taylor Swift</h2>
@@ -52,6 +52,8 @@
               Thank you, Taylor, for writing the soundtrack of my life.
             </p>
           </div>
+          <button type="button" class="like-btn" data-blog-id="1">Like</button>
+          <p class="like-count" id="like-count-1">Likes: loading...</p>
         </div>
 
         <!-- Gamozo Project Blog -->
@@ -75,6 +77,8 @@
               Gamozo is my mini playground where fun meets code!
             </p>
           </div>
+          <button type="button" class="like-btn" data-blog-id="2">Like</button>
+          <p class="like-count" id="like-count-2">Likes: loading...</p>
         </div>
 
         <!-- Haha Sisters Blog -->
@@ -95,8 +99,9 @@
               follow all three of them individually too.
             </p>
           </div>
+          <button type="button" class="like-btn" data-blog-id="3">Like</button>
+          <p class="like-count" id="like-count-3">Likes: loading...</p>
         </div>
-
         <!-- W3Schools Blog -->
         <div class="blog-card">
           <img src="w3school.png" alt="Learning resources" />
@@ -115,6 +120,8 @@
               checking it out!
             </p>
           </div>
+          <button type="button" class="like-btn" data-blog-id="4">Like</button>
+          <p class="like-count" id="like-count-4">Likes: loading...</p>
         </div>
 
         <!-- Skincare Blog -->
@@ -136,6 +143,8 @@
               ✨ Give it a try sometime — your skin will thank you!
             </p>
           </div>
+          <button type="button" class="like-btn" data-blog-id="5">Like</button>
+          <p class="like-count" id="like-count-5">Likes: loading...</p>
         </div>
 
         <!-- Vidyoo Blog -->
@@ -160,8 +169,70 @@
               second home.
             </p>
           </div>
+          <button type="button" class="like-btn" data-blog-id="6">Like</button>
+          <p class="like-count" id="like-count-6">Likes: loading...</p>
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        event.preventDefault();
+        const likeButtons = document.querySelectorAll(".like-btn");
+
+        likeButtons.forEach((button) => {
+          const blogId = button.dataset.blogId;
+          const countEl = document.getElementById("like-count-" + blogId);
+
+          function isLiked() {
+            return localStorage.getItem("liked_blog_" + blogId) === "true";
+          }
+
+          function setButtonState() {
+            button.textContent = isLiked() ? "Unlike" : "Like";
+          }
+
+          function updateLikeCount() {
+            fetch(`http://127.0.0.1:8000/like?blog_id=${blogId}`)
+              .then((res) => res.json())
+              .then((data) => {
+                countEl.textContent = `Likes: ${data.likes}`;
+              })
+              .catch((err) => {
+                countEl.textContent = "Likes: error";
+                console.error(err);
+              });
+          }
+
+          // On load
+          setButtonState();
+          updateLikeCount();
+
+          // On click
+          button.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const action = isLiked() ? "unlike" : "like";
+
+            fetch("http://127.0.0.1:8000/like", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+              },
+              body: `blog_id=${blogId}&action=${action}`,
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                const likedNow = action === "like";
+                localStorage.setItem("liked_blog_" + blogId, likedNow);
+                setButtonState();
+                countEl.textContent = `Likes: ${data.likes}`;
+              })
+              .catch((err) => {
+                console.error("Error updating like:", err);
+              });
+          });
+        });
+      });
+    </script>
   </body>
 </html>
