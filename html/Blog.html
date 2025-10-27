@@ -9,6 +9,11 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+      
   </head>
   <body>
     <nav class="navbar">
@@ -38,21 +43,21 @@
             <p>
               From the moment I heard "Love Story" on the radio, I knew there
               was something magical about Taylor Swift. Her lyrics feel like
-              pages from my own diary — full of emotion, honesty, and
-              storytelling that hits straight to the heart. 🌟
-              <br /><br />
+              pages from my own diary full of emotion, honesty, and
+              storytelling that hits straight to the heart.
+              <br />
               Taylor’s journey from country to pop and now indie-folk shows how
               fearless and versatile she is as an artist. Whether I’m feeling on
               top of the world or just need to cry it out, there’s always a
               Taylor Swift song that understands me.
               <br /><br />
-              She’s not just a musician to me — she’s a role model, a comfort,
+              She’s not just a musician to me, she’s a role model, a comfort,
               and an inspiration.
               <br />
               Thank you, Taylor, for writing the soundtrack of my life.
             </p>
           </div>
-          <button type="button" class="like-btn" data-blog-id="1">Like</button>
+          <button type="button" class="like-btn" data-blog-id="1"></button>
           <p class="like-count" id="like-count-1">Likes: loading...</p>
         </div>
 
@@ -66,7 +71,7 @@
               <strong>Gamozo</strong> is a fun and simple web project I recently
               started to explore the world of front-end development. It's a
               small collection of classic games like <em>Tic Tac Toe</em>,
-              <em>Stone Paper Scissors</em>, and more — built using only HTML,
+              <em>Stone Paper Scissors</em>, and more built using only HTML,
               CSS, and a bit of JavaScript.
             </p>
             <p>
@@ -77,7 +82,7 @@
               Gamozo is my mini playground where fun meets code!
             </p>
           </div>
-          <button type="button" class="like-btn" data-blog-id="2">Like</button>
+          <button type="button" class="like-btn" data-blog-id="2"></button>
           <p class="like-count" id="like-count-2">Likes: loading...</p>
         </div>
 
@@ -88,18 +93,18 @@
             <div class="blog-date">May 21, 2025</div>
             <h2>Favorite YouTuber Shoutout</h2>
             <p>
-              I love everything about the <strong>Haha Sisters</strong> — their
+              I love everything about the <strong>Haha Sisters</strong> their
               stylish outfits, the fun bond they share, and the way they enjoy
               food together. Watching <strong>Erica</strong> eat is honestly a
               vibe! Her expressions make even the simplest meals look delicious.
             </p>
             <p>
-              Whenever I’m stuck with a boring meal, I watch their videos — and
+              Whenever I’m stuck with a boring meal, I watch their videos and
               suddenly, I’m enjoying every bite like I’m eating with them. I
               follow all three of them individually too.
             </p>
           </div>
-          <button type="button" class="like-btn" data-blog-id="3">Like</button>
+          <button type="button" class="like-btn" data-blog-id="3"></button>
           <p class="like-count" id="like-count-3">Likes: loading...</p>
         </div>
         <!-- W3Schools Blog -->
@@ -120,7 +125,7 @@
               checking it out!
             </p>
           </div>
-          <button type="button" class="like-btn" data-blog-id="4">Like</button>
+          <button type="button" class="like-btn" data-blog-id="4"></button>
           <p class="like-count" id="like-count-4">Likes: loading...</p>
         </div>
 
@@ -132,7 +137,7 @@
             <h2>My Simple Tan-Removal Secret</h2>
             <p>
               Hey there! Just wanted to share something that really works for me
-              when I feel tanned after a sunny day — a mix of
+              when I feel tanned after a sunny day a mix of
               <strong>turmeric, curd, and honey</strong>. It’s super simple and
               all natural!
             </p>
@@ -140,10 +145,10 @@
               I just mix a little turmeric with fresh curd and a bit of honey,
               apply it to my face (or hands), and leave it on for 15 minutes.
               After washing it off, my skin feels so much softer and brighter.
-              ✨ Give it a try sometime — your skin will thank you!
+              ✨ Give it a try sometime your skin will thank you!
             </p>
           </div>
-          <button type="button" class="like-btn" data-blog-id="5">Like</button>
+          <button type="button" class="like-btn" data-blog-id="5"></button>
           <p class="like-count" id="like-count-5">Likes: loading...</p>
         </div>
 
@@ -155,7 +160,7 @@
             <h2>My School</h2>
             <p>
               I love my school! It’s a place where I learn, laugh, and grow
-              every day. The teachers are really kind and helpful — they make
+              every day. The teachers are really kind and helpful they make
               learning fun and easy to understand.
             </p>
             <p>
@@ -165,11 +170,11 @@
             <p>
               But the best part? I’ve made some amazing friends here. We share
               memories, help each other, and have so much fun together. My
-              school isn’t just a place to study — it’s where I’ve built a
+              school isn’t just a place to study it’s where I’ve built a
               second home.
             </p>
           </div>
-          <button type="button" class="like-btn" data-blog-id="6">Like</button>
+          <button type="button" class="like-btn" data-blog-id="6"></button>
           <p class="like-count" id="like-count-6">Likes: loading...</p>
         </div>
       </div>
@@ -188,7 +193,7 @@
           }
 
           function setButtonState() {
-            button.textContent = isLiked() ? "Unlike" : "Like";
+            button.innerHTML = isLiked() ? '<i class="fa fa-heart" style="color: red;"></i>' : '<i class="fa fa-heart" style="color: grey;"></i>';
           }
 
           function updateLikeCount() {

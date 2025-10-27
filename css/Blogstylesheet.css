@@ -80,3 +80,10 @@ body {
 .Arrange {
   padding-top: 100px;
 }
+.like-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: tomato;
+}
